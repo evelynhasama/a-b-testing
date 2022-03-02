@@ -8,12 +8,15 @@ header {
 	padding-left: 40px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	max-width: 500px;
+	margin: auto;
 }
 
 .vendor-photo {
-	max-width: : 200px;
+	max-width: 500px;
 	max-height: 150px;
 	padding-right: 20px;
+	margin: auto;
 }
 
 .vendor-book-button {
