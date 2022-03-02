@@ -21,4 +21,6 @@ header {
 
 .vendor-book-button {
 	font-size: 2em;
+	max-width: 500px;
+	margin: auto;
 }
