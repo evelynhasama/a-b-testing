@@ -118,11 +118,17 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
         var timeLoaded = Date.now()
-          $(document).ready(function() {
-            timeLoaded =  Date.now();
-            console.log('Page Load:' + timeLoaded)
-            sendData(timeLoaded, 0.0, 0.0, uniq_session)
-          });
+        var onLoadFired = false;
+        function onPageLoad() {
+          if (onLoadFired) return;
+          onLoadFired = true;
+
+          timeLoaded = Date.now()
+          console.log('Page Load:' + timeLoaded)
+          sendData(timeLoaded, 0.0, 0.0, uniq_session)
+        }
+        $(window).on('pageshow', onPageLoad);
+        $(document).ready(onPageLoad);
 
         $("#mp1").on("click", function(d) {
               // Retrieve the object from storage
